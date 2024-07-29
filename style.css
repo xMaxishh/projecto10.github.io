@@ -1,0 +1,432 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Colores primarios */
+    --gradient-start: hsl(249, 99%, 64%);
+    --gradient-end: hsl(278, 94%, 30%);
+    --error-red: hsl(0, 100%, 66%);
+
+    /* Colores neutrales */
+    --white: hsl(0, 0%, 100%);
+    --light-grayish-violet: hsl(270, 3%, 87%);
+    --dark-grayish-violet: hsl(279, 6%, 55%);
+    --very-dark-violet: hsl(278, 68%, 11%);
+}
+
+body {
+    font-family: "Space Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    background: url(images/bg-main-desktop.png), var(--white);
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: 40vw 100vh;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.msg-succes {
+    display: none;
+    position: absolute;
+    right: 20%;
+    flex-direction: column;
+    align-items: center;
+    padding-block: 50px;
+    gap: 1.2rem;
+    z-index: 2;
+    width: 320px;
+
+    p {
+        color: var(--dark-grayish-violet);
+
+    }
+
+    h2 {
+        color: var(--very-dark-violet);
+        letter-spacing: 1.3px;
+    }
+
+    #continue {
+        width: 100%;
+        margin: auto;
+        margin-top: 1.2em;
+        font-family: inherit;
+        color: var(--white);
+        background: var(--very-dark-violet);
+        border-radius: 7px;
+        padding: 12px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    #continue:hover {
+        background-color: #211038;
+    }
+}
+
+.contenedor {
+    display: block;
+}
+
+.target-frente,
+.target-detras {
+    border-radius: 10px;
+    max-width: 500px;
+    max-height: 240px;
+    color: var(--white);
+    position: absolute;
+}
+
+
+.target-frente {
+    width: 100%;
+    height: 100%;
+    background: url(images/bg-card-front.png) no-repeat;
+    background-size: cover;
+    top: 18%;
+    left: 20%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.target-frente .img {
+    margin-bottom: 1rem;
+}
+
+.target-frente .numbers {
+    font-size: 2.1rem;
+
+    letter-spacing: 0.1rem;
+
+
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.target-frente .name,
+.target-frente .expired {
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+}
+
+.target-frente .name {
+    margin-bottom: 0;
+}
+
+.target-frente .expired {
+    align-self: flex-end;
+}
+
+.target-detras {
+    width: 100%;
+    height: 100%;
+    background: url(images/bg-card-back.png) no-repeat center;
+    background-size: cover;
+    bottom: 25%;
+    left: 25%;
+    z-index: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.caja {
+    display: flex;
+    justify-content: space-between;
+    align-content: flex-end;
+    flex-wrap: wrap;
+    margin-top: 3.0rem;
+}
+
+.target-detras .container-number {
+    border-radius: 8px;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 2.5rem;
+}
+
+.target-detras .number-seg {
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    color: var(--white);
+}
+
+
+.form {
+    position: absolute;
+    right: calc(12dvw + 5%);
+    padding: 2rem;
+    border-radius: 10px;
+    width: 450px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.inputs,
+.times,
+.cvc {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    margin-block: .5rem;
+    border: 1px solid var(--light-grayish-violet);
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.inputs {
+    margin-bottom: 1rem;
+}
+
+.inputs::placeholder,
+.times::placeholder,
+.cvc::placeholder {
+    color: var(--dark-grayish-violet);
+}
+
+.inputs:focus,
+.times:focus,
+.cvc:focus {
+    outline: none;
+    border: 1px solid var(--gradient-end);
+
+}
+
+.error {
+    color: var(--error-red);
+    position: absolute;
+    display: none;
+}
+
+.err0 {
+    top: 6.4rem;
+}
+
+.err1 {
+    bottom: 5.5rem;
+
+}
+
+.err3 {
+    top: 98%;
+    right: 7.6rem;
+}
+
+.err2 {
+    top: 98%;
+
+}
+
+
+.container-seg {
+    margin-top: .8rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container-time,
+.container-cvc {
+    width: 48%;
+}
+
+.container-inputs {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.7rem;
+    margin-bottom: .7rem;
+
+}
+
+.times {
+    margin-block: .5rem;
+    width: 48%;
+}
+
+#confirm {
+    background-color: var(--very-dark-violet);
+    color: var(--white);
+    font-family: inherit;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+}
+
+#confirm:hover {
+    background-color: #211038;
+}
+
+/* <div class="contaner-seg">
+<div class="container-time">
+  <label for="time"> Exp. Date (MM/YY)</label>
+  <input type="month" class="" id="timeMes" placeholder="MM">
+  <input type="number" class="" id="timeYear" placeholder="YY">
+</div>
+<div class="container-seg">
+  <label for="seg">CVC</label>
+  <input type="number" class="" id="seg" placeholder="e.g. 123">
+</div> */
+@media (min-width: 1000px) and (max-width: 1550px) {
+
+    .target-frente {
+        top: 14.88%;
+        left: 18%;
+    }
+
+    .target-detras {
+        left: 22%;
+        bottom: 11%;
+    }
+
+    .form {
+        right: 13%;
+    }
+
+}
+
+@media (max-width: 768px) {
+    body {
+
+        background: url(images/bg-main-mobile.png);
+        background-position: top;
+        background-size: 100vw 40vh;
+        background-repeat: no-repeat
+    }
+
+    .target-frente,
+    .target-detras {
+
+        width: 90vw;
+        height: 35vh;
+    }
+
+    .target-frente {
+        top: 23.88%;
+        left: 4%;
+    }
+
+    .target-detras {
+        top: 4%;
+        left: 22%;
+    }
+
+    .form {
+        width: 100dvw;
+        right: 5%;
+
+        text-align: center;
+        top: 40%;
+    }
+}
+@media (max-heigt:400px){
+    
+}
+
+@media (max-width: 480px) {
+
+
+    .target-frente,
+    .target-detras {
+        width: 80vw;
+        height: 35vh;
+    }
+
+    .target-frente .img {
+        margin-bottom: 3rem;
+    }
+
+    .target-frente .numbers {
+        font-size: 1.3rem;
+
+        margin: 0;
+        margin-bottom: 2.5rem;
+        padding: 0;
+    }
+
+    .caja {
+        margin: 0;
+    }
+
+    .msg-succes {
+        width: 85%;
+        margin: 0 auto;
+        position: revert;
+        margin-top: 80%;
+        height: 35%;
+
+        button#continue {
+            padding: 17px;
+            font-size: 1.2rem;
+        }
+    }
+
+
+    .target-frente {
+        top: 22.88%;
+        left: 4%;
+    }
+
+    .target-detras {
+        top: 8%;
+        left: 13%;
+    }
+
+    #confirm {
+        padding-block: 15px;
+        border-radius: 10px;
+    }
+
+    .inputs,
+    .times,
+    .cvc {
+        border-radius: 10px;
+    }
+
+    .form {
+
+        text-align: center;
+        top: 50dvh;
+
+        margin-top: 1.5rem;
+
+        label {
+            color: hsl(0deg 0% 0%);
+            display: flex;
+            justify-content: flex-start;
+            align-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+    }
+}

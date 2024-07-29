@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Interactive card details form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+  <div class="target-frente">
+    <div class="container frente">
+      <div class="img">
+        <img src="images/card-logo.svg" alt="">
+      </div>
+      <div class="numbers">0000 0000 0000 0000</div>
+      <div class="caja">
+        <div class="name">Jane Appleseed</div>
+        <div class="expired"> 00/00</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="target-detras">
+    <div class="container-number">
+      <div class="number-seg">000</div>
+    </div>
+  </div>
+  </div>
+  <div class="msg-succes">
+    <div class="img">
+      <img src="images/icon-complete.svg" alt="icon-complete">
+    </div>
+    <h2>THANK YOU!</h2>
+    <p>We've added your card details</p>
+    <button id="continue">Continue</button>
+  </div>
+
+  <form class="form">
+
+    <div class="contenedor">
+      <label for="nameCard">Cardholder Name</label>
+      <input type="text" class="inputs" id="nameCard" placeholder="e.g. Jane Appleseed" maxlength="16">
+
+
+      <label for="numberCard"> Card Number</label>
+      <input type="text" class="inputs" id="numberCard" placeholder="e.g. 1234 5678 9123 0000" maxlength="19">
+      <div class="error err1"><small>Wrong format, numbers only</small></div>
+
+      <div class="container-seg">
+        <div class="container-time">
+          <label for="timeMes">Exp. Date (MM/YY)</label>
+          <div class="container-inputs">
+            <input type="number" class="times" id="timeMes" placeholder="MM" max="2">
+            <input type="number" class="times" id="timeYear" placeholder="YY" max="4">
+            <div class="error err2"><small>Can't be blank</small></div>
+            <div class="error err3"><small>Can't be blank</small></div>
+          </div>
+        </div>
+        <div class="container-cvc">
+          <label for="cvc">CVC</label>
+          <input type="number" class="cvc" id="cvc" placeholder="e.g. 123" max="3">
+
+        </div>
+      </div>
+
+      <button id="confirm">Confirm</button>
+    </div>
+  </form>
+
+  <!-- Completed state start -->
+
+
+  <!-- 
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+  <script src="script.js"></script>
+</body>
+
+</html>
